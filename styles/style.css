@@ -1,11 +1,20 @@
+@keyframes move {
+    from {
+        transform: rotate(-15deg);
+    }
+
+    to {
+        transform: rotate(345deg);
+    }
+}
+
 body div {
-    margin: 0;
+     margin: 0;
     padding: 0;
 }
 
 .page {
     font-family: 'Helvetica Neue', Arial, sans-serif;
-
 }
 
 .header {
@@ -17,15 +26,14 @@ body div {
     min-height: 600px;
     max-height: 756px;
     background-color: #F2F2F2;
-    /* выше установили ограничения для секции */
+    overflow: hidden;
 }
 
-
-/* ниже мы привели пример двух селекторов, чтобы вы вспомнили запись элемента */
 
 .header__square-pic {
     height: 568px;
     width: 568px;
+
 }
 
 .table__cell_theme_dark {
@@ -40,7 +48,7 @@ body div {
     top: 30px;
     left: 64px;
     height: 32px;
-    width: 183px;-
+    width: 183px;
 }
 
 .header__title {
@@ -67,8 +75,14 @@ body div {
 }
 
 a {
+    opacity: 1;
     color: #2F80ED;
     text-decoration: none;
+    transition: opacity 0.1s linear;
+}
+
+a:hover {
+    opacity: 0.5;
 }
 
 .header__main-illustration img {
@@ -85,6 +99,151 @@ a {
     right: 0;
     top: 64px;
     background-color: #2F80ED;
+    transform: rotate(-15deg);
+    animation: move 20s infinite ease-in-out;
+}
+
+.technics {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 0 auto 100px auto;
+}
+
+.cards {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 240px 240px 240px;
+    grid-row-gap: 60px;
+    grid-column-gap: 100px;
+    width: 920px;
+    margin: 0 auto;
+    padding-top: 60px;
+}
+
+
+
+.cards__image {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    margin: 0 40px 43px 40px;
+}
+
+.cards__title {
+    line-height: 1.15;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.cards__deccription {
+    line-height: 23px;
+    font-size: 18px;
+    font-weight: normal;
+    text-align: center;
+}
+
+.video {
+    display: flex;
+    flex-direction: column;
+}
+
+.video .section-subtitle {
+    margin-bottom: 0;
+}
+
+.oakley {
+    display: flex;
+    justify-content: space-between;
+    line-height: 1.2;
+    font-size: 18px;
+    font-weight: normal;
+    padding: 160px 10% 0 10%;
+    background-color: #F2F2F2;
+    position: relative;
+}
+
+.video__iframes {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 20px;
+    width: 1050px;
+    margin: 0 auto;
+    z-index: 1;
+    position: relative;
+    top: 50px;
+}
+
+.khan {
+    background-color: #F2F2F2;
+    padding-top: 105px;
+}
+
+.khan__container {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.khan__author {
+    line-height: 42px;
+    font-size: 30px;
+    font-weight: normal;
+    margin: 0;
+}
+
+.khan__title {
+    line-height: 1.15;
+    font-size: 60px;
+    font-weight: bold;
+    margin-bottom: 60px;
+}
+
+.khan__quote {
+    width: 790px;
+    line-height: 34px;
+    font-size: 24px;
+    font-weight: normal;
+    margin-bottom: 36px;
+}
+
+.khan__quote-author {
+    line-height: 1.15;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.khan__quote-author-subline {
+    line-height: 1.15;
+    font-size: 24px;
+    font-weight: normal;
+    margin-bottom: 68px;
+}
+
+.khan__book-container {
+    display: flex;
+    justify-content: flex-start;
+    overflow: hidden;
+    position: relative;
+}
+
+.khan__book-pic {
+    width: 620px;
+    height: 608px;
+    margin-right: 20px;
+    object-fit: cover;
+    object-position: top;
+}
+
+.khan__buy-link {
+    line-height: 42px;
+    font-size: 30px;
+    font-weight: normal;
 }
 
 .description {
@@ -94,7 +253,6 @@ a {
     line-height: 1.2;
     font-size: 18px;
     font-weight: normal;
-
     margin: 100px auto;
 }
 
@@ -103,7 +261,6 @@ a {
     line-height: 1.2;
     font-size: 18px;
     font-weight: normal;
-
 }
 
 .two-columns__brief {
@@ -116,13 +273,11 @@ a {
     line-height: 34px;
     font-size: 24px;
     font-weight: normal;
-
 }
 
 .two-columns__paragraph:nth-child(2) {
     margin: 30px 0;
 }
-
 
 .two-columns__span-accent {
     font-weight: bold;
@@ -134,15 +289,19 @@ a {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    margin: 100px auto 0 auto;
-
+    margin: 0;
     overflow: hidden;
 }
 
 .kaufman {
     background-color: #1F1F1F;
     color: #FFFFFF;
-    margin-top: 0px;
+    padding-top: 90px;
+    padding-bottom: 90px;
+}
+
+h3 {
+    margin: 0;
 }
 
 .section-title,
@@ -151,12 +310,16 @@ a {
     line-height: 69px;
     font-size: 60px;
     font-weight: bold;
-    margin-bottom:20px;
+    margin: 0px auto 20px auto;
     text-align: center;
 }
 
+.section-title {
+    line-height: 1.15;
+}
+
 .section-title_theme_dark {
-    margin: 90px 0 20px 0;
+    z-index: 1;
 }
 
 .section-subtitle,
@@ -165,6 +328,7 @@ a {
     line-height: 34px;
     font-size: 24px;
     font-weight: normal;
+    margin: 0 auto 20px;
     text-align: center;
 }
 
@@ -175,7 +339,6 @@ a {
     flex-wrap: wrap;
     width: 1100px;
     margin: 0 auto 100px auto;
-
 }
 
 .table_theme_dark {
@@ -215,18 +378,41 @@ a {
     top: 0;
     width: 877px;
     height: 877px;
+    animation: move 20s infinite ease-in-out;
 }
 
-.kaufman__tringle img{
+.kaufman__tringle img {
     height: 100%;
     width: 100%;
+}
+
+.recources .section-title {
+    margin-top: 100px;
+}
+
+.recources .section-subtitle {
+    margin-bottom: 80px;
+}
+
+.recources__logo-zone {
+    display: flex;
+    justify-content: space-around;
+    width: 1100px;
+    margin: 80px auto 217px auto;
+}
+
+.resources__logo {
+    width: 270px;
+    height: 38px;
+    border: 1px solid red;
 }
 
 .feinman {
     height: 790px;
     position: relative;
     display: flex;
-    padding-top: 100px;
+    padding-top: 80px;
+    margin-bottom: 100px;
     align-items: center;
     flex-direction: column;
     flex-wrap: wrap;
